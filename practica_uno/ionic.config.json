@@ -1,0 +1,7 @@
+{
+  "name": "practica_uno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

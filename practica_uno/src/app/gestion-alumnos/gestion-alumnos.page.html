@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Gestión Alumnos</ion-title>
+    <ion-button href="home" color="dark" size="small" >Ir a home</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <!-- Número de Control -->
+    <ion-item>
+      <ion-input
+        label="Número de Control *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.n_control"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <!-- Nombre -->
+    <ion-item>
+      <ion-input
+        label="Nombre *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.nombre"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <!-- Segundo Nombre -->
+    <ion-item>
+      <ion-input
+        label="Segundo Nombre"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.snombre"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <!-- Apellido Paterno -->
+    <ion-item>
+      <ion-input
+        label="Apellido Paterno *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.apat"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <!-- Apellido Materno -->
+    <ion-item>
+      <ion-input
+        label="Apellido Materno *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.amat"
+        type="text">
+      </ion-input>
+    </ion-item>
+
+    <!-- Género -->
+    <ion-item>
+      <ion-select
+        label="Género *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.genero"
+        placeholder="Seleccione género">
+        <ion-select-option value="M">Masculino</ion-select-option>
+        <ion-select-option value="F">Femenino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Fecha de Nacimiento -->
+    <ion-item>
+      <ion-input
+        label="Fecha de Nacimiento"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.fecha_nac"
+        type="date">
+      </ion-input>
+    </ion-item>
+
+    <!-- Carrera dinámica con el *ngFor -->
+    <ion-item>
+      <ion-select
+        label="Carrera *"
+        labelPlacement="floating"
+        [(ngModel)]="alumnos.fk_caralu"
+        placeholder="Seleccione una carrera">
+        <ion-select-option *ngFor="let car of listaCarreras" [value]="car.id">
+          {{ car.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón Guardar -->
+  <ion-button expand="block" color="dark" (click)="validarGuardar()">
+    GUARDAR
+  </ion-button>
+</ion-content>

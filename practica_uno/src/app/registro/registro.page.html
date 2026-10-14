@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>{{ esRegistro ? 'Crear Cuenta para Nuevos Usuarios' : 'Iniciar Sesión Usuarios' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fondo-personalizado">
+
+  <div class="card-contenedor">
+
+    <ion-list lines="none">
+      <!-- IP del servidor: la IP de la PC, o localhost solo para probar en la PC -->
+      <ion-item class="input-personalizado">
+        <ion-input
+          label="IP del servidor *"
+          labelPlacement="floating"
+          [(ngModel)]="api.ip"
+          type="text"
+          placeholder="Ej. 192.168.1.75 o localhost">
+        </ion-input>
+      </ion-item>
+
+      <!-- El nombre solo se pide si es un registro nuevo -->
+      <ion-item class="input-personalizado" *ngIf="esRegistro">
+        <ion-input
+          label="Nombre *"
+          labelPlacement="floating"
+          [(ngModel)]="usuarios.nombre"
+          type="text"
+          placeholder="Tu nombre completo">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="input-personalizado">
+        <ion-input
+          label="Matrícula *"
+          labelPlacement="floating"
+          [(ngModel)]="usuarios.matricula"
+          type="text"
+          placeholder="Tu matrícula">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="input-personalizado">
+        <ion-input
+          label="Correo Electrónico *"
+          labelPlacement="floating"
+          [(ngModel)]="usuarios.correo"
+          type="email"
+          placeholder="Tu correo institucional">
+        </ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" color="warning" class="boton-personalizado ion-margin-top" (click)="procesarAccion()">
+      {{ esRegistro ? 'REGISTRARME' : 'ENTRAR' }}
+    </ion-button>
+
+    <ion-button expand="block" color="danger" fill="clear" (click)="cambiarModo()">
+      {{ esRegistro ? '¿Ya tienes cuenta? Inicia sesión aquí' : '¿No tienes cuenta? Regístrate' }}
+    </ion-button>
+
+    <div class="imagen-container">
+      <img src="https://www.puebla.tecnm.mx/wp-content/uploads/2024/02/logo02-e1706892855299-1024x1024.jpg" alt="Logo TecNM Puebla" />
+    </div>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,56 @@
+// registro.page.scss
+ion-content {
+  // Puedes usar un color hexadecimal, RGB o un nombre de color
+  --background: #0f0e0f; 
+}
+
+.card-contenedor {
+  max-width: 420px;
+  width: 100%;
+  margin: 30px auto;
+  background: #0f0e0f;
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(231, 0, 96, 0.08);
+}
+
+.input-personalizado {
+  --background: #f8f3a4;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #020c1a;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+.boton-personalizado {
+  --border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  height: 48px;
+}
+// Estilos para la imagen externa
+.imagen-container {
+  margin-top: 20px;
+  text-align: center;
+
+  // Estilos para la imagen institucional dentro de la tarjeta
+.imagen-container {
+  margin-top: 25px;       // Espacio superior para que no pegue con los botones
+  text-align: center;     // Centra el logo horizontalmente
+  width: 100%;            // Ocupa todo el ancho disponible
+  padding: 10px;          // Espacio interno (respiro) para el logo
+
+  img {
+    width: 100%;          // Intenta ocupar todo el ancho
+    max-width: 180px;     // Controla el tamaño máximo (ajusta a tu gusto)
+    height: auto;         // La altura se ajusta proporcionalmente
+    
+    // CAMBIO IMPORTANTE AQUÍ:
+    object-fit: contain;  // MUESTRA TODA LA IMAGEN COMPLETA, sin cortes
+    
+    // Si la imagen tiene fondo blanco y tu tarjeta es blanca, no necesitas bordes redondeados
+    // border-radius: 0; 
+  }
+}
+}
